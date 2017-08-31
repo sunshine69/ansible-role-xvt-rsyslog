@@ -1,0 +1,1 @@
+*.*   @{{ rsyslogd_remote }}:514

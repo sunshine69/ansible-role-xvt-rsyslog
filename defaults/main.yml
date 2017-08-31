@@ -1,0 +1,3 @@
+---
+rsyslogd_remote: ""
+rsyslogdconf: rsyslogd_conf.j2
