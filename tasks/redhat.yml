@@ -1,0 +1,11 @@
+- name: Ensure rsyslog is installed.
+  yum:
+    name: rsyslog
+    state: installed
+
+- name: Update the rsyslogd configuration file.
+  template:
+    src: rsyslogd_conf
+    dest: "/etc/rsyslog.d/10-rsyslog.conf"
+  notify: restart rsyslog
+...
