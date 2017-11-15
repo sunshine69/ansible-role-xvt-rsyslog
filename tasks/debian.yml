@@ -1,0 +1,13 @@
+---
+- name: Update apt cache.
+  apt: update_cache=yes cache_valid_time=86400
+
+- name: Ensure rsyslog is installed.
+  apt: "name=rsyslog state=installed"
+
+- name: Update the rsyslogd configuration file.
+  template:
+    src: rsyslogd_conf
+    dest: "/etc/rsyslog.d/10-rsyslog.conf"
+  notify: restart rsyslog
+...
